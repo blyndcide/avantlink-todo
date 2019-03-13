@@ -5,13 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TaskListComponent } from './task-list/task-list.component';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatInputModule, MatSelectModule, MatRadioModule, MatToolbarModule, MatSidenavModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NavComponent } from './nav/nav.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TaskListComponent
+    TaskListComponent,
+    NavComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,17 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    LayoutModule
+    LayoutModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
