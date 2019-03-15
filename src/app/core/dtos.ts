@@ -17,6 +17,22 @@ export class Task {
     task_name: string;
 }
 
+export class TaskPostRequest {
+    constructor(data: any) {
+        Object.assign(this, data);
+    }
+
+    name: string;
+}
+
+export class ErrorWrapper {
+    constructor(data: any) {
+        Object.assign(this, data);
+    }
+
+    errors: Error[];
+}
+
 export class Error {
     constructor(data: any) {
         Object.assign(this, data);

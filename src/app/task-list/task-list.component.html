@@ -1,5 +1,16 @@
 <mat-card>
-  <ul>
-    <li *ngFor="let task of tasks$ | async">{{ task.task_name }}</li>
-  </ul>
+  <form [formGroup]="tasksForm" (ngSubmit)="onSubmit()">
+    <ul>
+      <li>
+        <mat-form-field>
+          <input matInput [formControl]="controls.name" placeholder="Add Task">
+        </mat-form-field>
+        <button type="submit" mat-mini-fab [disabled]="!tasksForm.valid" color="primary">add</button>
+      </li>
+      
+      <li *ngFor="let task of tasks$ | async; trackBy: trackByTaskId">
+        <button type="button" mat-icon-button (click)="onDelete(task.task_id)"><mat-icon>delete</mat-icon></button>{{ task.task_name }}
+      </li>
+    </ul>
+  </form>
 </mat-card>
