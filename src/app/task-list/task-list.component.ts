@@ -53,7 +53,6 @@ export class TaskListComponent implements OnInit, OnDestroy {
   onDelete(id: number) {
     this._taskService.deleteTask(id)
       .subscribe(x => {
-        this.controls.name.setValue('');
         this._matSnackBar.open('Task Deleted', 'Done', { duration: 1500 });
       }, (errorResp: HttpErrorResponse) => {
         this._matSnackBar.open((<ErrorWrapper>errorResp.error).errors.map((x: Error) => x.message).join(' '), 'Done');
